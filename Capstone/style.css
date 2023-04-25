@@ -1,0 +1,57 @@
+body {
+	background: linear-gradient(90deg, #002244 0%, #00008B 50%, #6F00FF 100%);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+p, footer {
+    color: #FFFFFF;
+}
+.footer {
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 3%;
+}
+
+h1::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+h1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: #6F00FF;
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+h1 {
+    position: relative;
+    font-size: 5rem;
+}
